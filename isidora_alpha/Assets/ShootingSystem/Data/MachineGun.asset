@@ -23,3 +23,5 @@ MonoBehaviour:
   ImpactForce: 10
   ReloaTime: 0
   Recoil: 0
+  ImpactEffect: {fileID: 1128225886864541584, guid: f420ce993fe91d241bd74a147c93ba99,
+    type: 3}

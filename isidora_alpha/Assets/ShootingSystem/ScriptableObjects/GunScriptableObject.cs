@@ -16,5 +16,5 @@ public class GunScriptableObject : ScriptableObject
     public float Recoil = 0f;
     
     //public ParticleSystem ShootEffect;
-    //public GameObject ImpactEffect;
+    public GameObject ImpactEffect;
 }

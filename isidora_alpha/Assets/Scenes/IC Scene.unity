@@ -273,6 +273,8 @@ MonoBehaviour:
   startingShootObject: {fileID: 740452952}
   gun: {fileID: 11400000, guid: 433778b435feace48a7a8233d9b4b319, type: 2}
   ShootEffect: {fileID: 4750544886019906983}
+  ImpactEffect: {fileID: 1128225886864541584, guid: f420ce993fe91d241bd74a147c93ba99,
+    type: 3}
 --- !u!33 &112187371
 MeshFilter:
   m_ObjectHideFlags: 0

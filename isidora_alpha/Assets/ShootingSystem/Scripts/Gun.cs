@@ -40,6 +40,24 @@ public class Gun : MonoBehaviour
         RaycastHit hit;
         if(Physics.Raycast(startingShootObject.transform.position,startingShootObject.transform.forward,out hit,gun.Range)){
             Debug.Log(hit.transform.name);
+
+            /*
+            Need to create an object here 
+
+            Target target = hit.transform.GetComponent<Bla>();
+            if(target != null){
+                fairoba
+            }
+            */
+
+            //We put force on the object if it has a rigidbody
+
+            if(hit.rigidbody != null){
+                hit.rigidbody.AddForce(-hit.normal * gun.ImpactForce);
+            }
+
+            GameObject ImpactToDestroy = Instantiate(gun.ImpactEffect,hit.point,Quaternion.LookRotation(hit.normal));
+            Destroy(ImpactToDestroy,2f);
         }
     }
 }
