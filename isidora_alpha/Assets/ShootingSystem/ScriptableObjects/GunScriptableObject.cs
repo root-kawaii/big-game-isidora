@@ -12,7 +12,7 @@ public class GunScriptableObject : ScriptableObject
     public float Damage = 10f;
     public float Range = 100f;
     public float ImpactForce = 10f;
-    public float ReloaTime = 0f;
+    public float ReloadTime = 0f;
     public float Recoil = 0f;
     
     //public ParticleSystem ShootEffect;
