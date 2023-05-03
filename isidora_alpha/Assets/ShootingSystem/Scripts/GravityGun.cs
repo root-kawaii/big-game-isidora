@@ -19,8 +19,11 @@ using UnityEngine;
  * 
  * Original author: Jake Perry, reddit.com/user/nandos13
  */
-public class Gun : MonoBehaviour
+public class GravityGun : MonoBehaviour
 {
+
+    private bool throwable = false;
+    [Header("Push Force")] public float pushForce = 10.0f;
     /// <summary>The rigidbody we are currently holding</summary>
     private new Rigidbody rigidbody;
 
@@ -52,6 +55,7 @@ public class Gun : MonoBehaviour
 
     void Update()
     {
+
         if (!Input.GetMouseButton(0))
         {
             // We are not holding the mouse button. Release the object and return before checking for a new one
@@ -99,7 +103,7 @@ public class Gun : MonoBehaviour
         {
             // We are already holding an object, listen for rotation input
 
-            if (Input.GetKey(KeyCode.R))
+            if (Input.GetKey(KeyCode.F))
             {
                 rotationInput += new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y"));
             }
@@ -112,6 +116,7 @@ public class Gun : MonoBehaviour
 
     private void FixedUpdate()
     {
+
         if (rigidbody)
         {
             // We are holding an object, time to rotate & move it
@@ -146,8 +151,30 @@ public class Gun : MonoBehaviour
             Vector3 force = toDestination / Time.fixedDeltaTime;
 
             // Remove any existing velocity and add force to move to final position
-            rigidbody.velocity = Vector3.zero;
-            rigidbody.AddForce(force, ForceMode.VelocityChange);
+            if (Input.GetKey(KeyCode.R))
+            {
+                throwable = true;
+                rigidbody.AddForce(transform.forward * pushForce);
+                StartCoroutine(Countdown(1));
+            }
+            else if (!throwable)
+            {
+                rigidbody.velocity = Vector3.zero;
+                rigidbody.AddForce(force, ForceMode.VelocityChange);
+            }
+
         }
     }
+    IEnumerator Countdown(int seconds)
+    {
+        int counter = seconds;
+        while (counter > 0)
+        {
+            yield return new WaitForSeconds(1);
+            counter--;
+        }
+        throwable = false;
+    }
 }
+
+
