@@ -531,6 +531,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &332946869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332946859}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53a42d460fa954cffa33a0e64290fdda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &479324756
 GameObject:
   m_ObjectHideFlags: 0
@@ -1653,16 +1665,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 637ee617cf998574691a4e2a3126dffa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingShootObject: {fileID: 1210876711}
-  gun: {fileID: 11400000, guid: 433778b435feace48a7a8233d9b4b319, type: 2}
-  ShootEffect: {fileID: 2114440166}
-  _playerInputs: {fileID: 0}
-  objectInSight: {fileID: 0}
-  objectPulled: {fileID: 0}
-  _parentTransform: {fileID: 0}
-  _nextTimeToFire: 0
-  maxDistance: 10
-  pullForce: 20
 --- !u!114 &1332060734 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8616685848737228376, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
@@ -1978,12 +1980,6 @@ MeshFilter:
 --- !u!4 &2114440164 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 264520514954343661, guid: ab3efdcb3e4feb14d882aa1cac56309f,
-    type: 3}
-  m_PrefabInstance: {fileID: 1163460416}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &2114440166 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 7692336672675980230, guid: ab3efdcb3e4feb14d882aa1cac56309f,
     type: 3}
   m_PrefabInstance: {fileID: 1163460416}
   m_PrefabAsset: {fileID: 0}
